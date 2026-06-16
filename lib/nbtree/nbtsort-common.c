@@ -10,14 +10,35 @@
  */
 
 
+/*
+ * In PostgreSQL 19+, BTSpool is defined inside nbtsort-19.c which is included
+ * before this file in pg_btree.c.  However, if that file does not expose the
+ * full struct body (e.g. only a forward declaration is visible via nbtree.h),
+ * we define it here so that _bt_spoolinit() can use it.  The definition must
+ * match the one in nbtsort-19.c exactly.
+ */
+#if PG_VERSION_NUM >= 190000
+#ifndef BTSPOOL_DEFINED
+#define BTSPOOL_DEFINED
+typedef struct BTSpool
+{
+	Tuplesortstate *sortstate;	/* state data for tuplesort.c */
+	Relation	heap;
+	Relation	index;
+	bool		isunique;
+	bool		nulls_not_distinct;
+} BTSpool;
+#endif	/* BTSPOOL_DEFINED */
+#endif	/* PG_VERSION_NUM >= 190000 */
+
 #if PG_VERSION_NUM >= 140000
 /*
  * create and initialize a spool structure
  */
 static BTSpool *
-_bt_spoolinit(Relation heap, Relation index, bool isunique, 
+_bt_spoolinit(Relation heap, Relation index, bool isunique,
 #if PG_VERSION_NUM >= 150000
-			bool nulls_not_distinct, 
+			bool nulls_not_distinct,
 #endif
 			bool isdead)
 {
@@ -44,7 +65,11 @@ _bt_spoolinit(Relation heap, Relation index, bool isunique,
 #if PG_VERSION_NUM >= 150000
 													nulls_not_distinct,
 #endif
+#if PG_VERSION_NUM >= 190000
+													btKbytes, NULL, TUPLESORT_NONE);
+#else
 													btKbytes, NULL, false);
+#endif
 
 	return btspool;
 }
