@@ -56,7 +56,7 @@ struct TypeInfo
 	int			len;
 	Oid			typeid;
 }
-TYPES[] =
+static TYPES[] =
 {
 	{ "CHAR"				, Read_char		, Write_char	, 0					, CSTRINGOID},
 	{ "VARCHAR"				, Read_varchar	, Write_char	, 0					, CSTRINGOID},
@@ -74,7 +74,7 @@ struct TypeAlias
 	const char *name;
 	TypeId		id;
 }
-ALIASES[] =
+static ALIASES[] =
 {
 	/* aliases (SQL) */
 	{ "CHARACTER"			, T_CHAR },
