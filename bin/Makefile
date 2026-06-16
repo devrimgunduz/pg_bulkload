@@ -72,6 +72,8 @@ sql/init-17.sql:
 	cp sql/init-extension-v3.sql sql/init-17.sql
 sql/init-18.sql:
 	cp sql/init-extension-v3.sql sql/init-18.sql
+sql/init-19.sql:
+	cp sql/init-extension-v3.sql sql/init-19.sql
 
 sql/load_bin.sql: sql/load_bin-$(MAJORVERSION).sql
 	cp sql/load_bin-$(MAJORVERSION).sql sql/load_bin.sql
@@ -101,6 +103,8 @@ sql/load_bin-17.sql:
 	cp sql/load_bin-v2.sql sql/load_bin-17.sql
 sql/load_bin-18.sql:
 	cp sql/load_bin-v2.sql sql/load_bin-18.sql
+sql/load_bin-19.sql:
+	cp sql/load_bin-v2.sql sql/load_bin-19.sql
 
 sql/load_csv.sql: sql/load_csv-$(MAJORVERSION).sql
 	cp sql/load_csv-$(MAJORVERSION).sql sql/load_csv.sql
@@ -130,6 +134,8 @@ sql/load_csv-17.sql:
 	cp sql/load_csv-v3.sql sql/load_csv-17.sql
 sql/load_csv-18.sql:
 	cp sql/load_csv-v3.sql sql/load_csv-18.sql
+sql/load_csv-19.sql:
+	cp sql/load_csv-v3.sql sql/load_csv-19.sql
 
 sql/load_filter.sql: sql/load_filter-$(MAJORVERSION).sql
 	cp sql/load_filter-$(MAJORVERSION).sql sql/load_filter.sql
@@ -159,6 +165,8 @@ sql/load_filter-17.sql:
 	cp sql/load_filter-v3.sql sql/load_filter-17.sql
 sql/load_filter-18.sql:
 	cp sql/load_filter-v3.sql sql/load_filter-18.sql
+sql/load_filter-19.sql:
+	cp sql/load_filter-v3.sql sql/load_filter-19.sql
 
 sql/load_function.sql: sql/load_function-$(MAJORVERSION).sql
 	cp sql/load_function-$(MAJORVERSION).sql sql/load_function.sql
@@ -188,6 +196,8 @@ sql/load_function-17.sql:
 	cp sql/load_function-v3.sql sql/load_function-17.sql
 sql/load_function-18.sql:
 	cp sql/load_function-v3.sql sql/load_function-18.sql
+sql/load_function-19.sql:
+	cp sql/load_function-v3.sql sql/load_function-19.sql
 
 sql/write_bin.sql: sql/write_bin-$(MAJORVERSION).sql
 	cp sql/write_bin-$(MAJORVERSION).sql sql/write_bin.sql
