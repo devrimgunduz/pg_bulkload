@@ -596,7 +596,7 @@ IsPageCreatedByLoader(Page page)
 	if (!PageHeaderIsValid(page))
 		return true;
 
-	if (targetBlock->pd_lsn.xlogid == 0 && targetBlock->pd_lsn.xrecoff == 0)
+	if (PageXLogRecPtrGet(&targetBlock->pd_lsn) == InvalidXLogRecPtr)
 		return true;
 	else
 		return false;
