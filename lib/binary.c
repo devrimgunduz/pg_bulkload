@@ -48,7 +48,7 @@ typedef enum TypeId
 	T_FLOAT8,
 } TypeId;
 
-struct TypeInfo
+static struct TypeInfo
 {
 	const char *name;
 	Read		read;
@@ -56,7 +56,7 @@ struct TypeInfo
 	int			len;
 	Oid			typeid;
 }
-static TYPES[] =
+TYPES[] =
 {
 	{ "CHAR"				, Read_char		, Write_char	, 0					, CSTRINGOID},
 	{ "VARCHAR"				, Read_varchar	, Write_char	, 0					, CSTRINGOID},
@@ -69,12 +69,12 @@ static TYPES[] =
 	{ "DOUBLE"				, Read_float8	, Write_float8	, sizeof(float8)	, FLOAT8OID	},
 };
 
-struct TypeAlias
+static struct TypeAlias
 {
 	const char *name;
 	TypeId		id;
 }
-static ALIASES[] =
+ALIASES[] =
 {
 	/* aliases (SQL) */
 	{ "CHARACTER"			, T_CHAR },
