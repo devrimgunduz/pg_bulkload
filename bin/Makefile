@@ -227,17 +227,19 @@ sql/write_bin-17.sql:
 	cp sql/write_bin-v2.sql sql/write_bin-17.sql
 sql/write_bin-18.sql:
 	cp sql/write_bin-v2.sql sql/write_bin-18.sql
+sql/write_bin-19.sql:
+	cp sql/write_bin-v2.sql sql/write_bin-19.sql
 
 .PHONY: subclean
 clean: subclean
 
 subclean:
-	rm -f sql/init.sql sql/init-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
-	rm -f sql/load_bin.sql sql/load_bin-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
-	rm -f sql/load_csv.sql sql/load_csv-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
-	rm -f sql/load_filter.sql sql/load_filter-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
-	rm -f sql/load_function.sql sql/load_function-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
-	rm -f sql/write_bin.sql sql/write_bin-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18}.sql
+	rm -f sql/init.sql sql/init-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
+	rm -f sql/load_bin.sql sql/load_bin-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
+	rm -f sql/load_csv.sql sql/load_csv-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
+	rm -f sql/load_filter.sql sql/load_filter-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
+	rm -f sql/load_function.sql sql/load_function-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
+	rm -f sql/write_bin.sql sql/write_bin-{9.3,9.4,9.5,9.6,10,11,12,13,14,15,16,17,18,19}.sql
 
 installcheck: sql/init.sql sql/load_bin.sql sql/load_csv.sql sql/load_function.sql sql/load_filter.sql sql/write_bin.sql
 
